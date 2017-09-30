@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <title>finding location</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <script type="text/javascript">
+
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var lat = position.coords.latitude;
+      var lng = position.coords.longitude;
+      rlat = Math.round( lat * 1000 ) / 1000
+      rlng = Math.round( lng * 1000) / 1000
+      document.writeln(rlat + ", " + rlng);
+    },
+    function(failure) {
+      document.writeln("geoloc failed :(");
+    }
+  );
+} else {
+  document.writeln("no geolocation :(");
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>
