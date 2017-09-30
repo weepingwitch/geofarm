@@ -20,7 +20,7 @@
       var lng = position.coords.longitude;
       rlat = Math.round( lat * 1000 ) / 1000
       rlng = Math.round( lng * 1000) / 1000
-      document.writeln(rlat + ", " + rlng);
+      updatepage(rlat,rlng);
     },
     function(failure) {
       document.writeln("geoloc failed :(");
@@ -29,9 +29,40 @@
 } else {
   document.writeln("no geolocation :(");
 }
+
+function updatepage(rlat, rlng)
+{
+    rlat = Math.round( rlat * 100 ) / 100;
+    rlng = Math.round( rlng * 100) / 100;
+    $('#debug').html(rlat + ", " + rlng);
+
+    var fileloc = "backend/visitfarm.php?s="
+    var lurl = ""+rlat+""+rlng;
+    lurl = lurl.split('.').join('');
+    lurl = lurl.split('-').join('');
+    var finstring = fileloc + lurl;
+    $('#maincontent').load(finstring);
+  //  $('#image').attr("src",finstring);
+}
+
+
+
 </script>
 </head>
 <body>
+
+<div id="maincontent">
+
+</div>
+
+
+
+<br>
+<div id="debug">
+
+</div>
+
+
 
 </body>
 </html>
