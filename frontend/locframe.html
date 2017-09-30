@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 
 <html>
 
@@ -36,12 +35,13 @@ function updatepage(rlat, rlng)
     rlng = Math.round( rlng * 100) / 100;
     $('#debug').html(rlat + ", " + rlng);
 
-    var fileloc = "backend/visitfarm.php?s="
+    var fileloc = "backend/visitfarm.php";
     var lurl = ""+rlat+""+rlng;
     lurl = lurl.split('.').join('');
     lurl = lurl.split('-').join('');
-    var finstring = fileloc + lurl;
-    $('#maincontent').load(finstring);
+
+
+    $('#maincontent').load(fileloc, {s:lurl});
   //  $('#image').attr("src",finstring);
 }
 
