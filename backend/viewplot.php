@@ -2,7 +2,7 @@
 $seed = $_POST['s'];
 $num = $_POST['n'];
 
-include("updateplot.php");
+include("growplot.php");
 
 echo "plot state is " . $state;
 
