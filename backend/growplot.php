@@ -3,9 +3,10 @@
 $needsupdate = false;
 
 //HERE IS WHERE WE WOULD FETCH THE PLANT TYPE FROM THE DATABSE
-$type = 0;
+$type = 1;
 // TYPE VALUES
-//0 - flowers
+//0 - uhh
+//1 - flowers
 
 
 // HERE IS WHERE WE WOULD FETCH THE STATE FROM THE DATABSE
@@ -43,14 +44,26 @@ else{
 //try to grow?
 while($cangrow){
   //FETCH HOW MUCH TIME IT TAKES FROM THE DATABASE BAED ON WATERED STAT
+  $sql = "SELECT * FROM `planttypes` WHERE `id` = '$type'";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0)
+    $row = $result->fetch_assoc()
+    $growtime = $row['growtime'];
+    $harvesttime = $row['harvesttime'];
+    echo $harvesttime;
+
+  } else {
+      echo "0 results";
+  }
+
+
   if ($watered){
-    $growtime =  10;
+    $growtime =  $growtime / 2;
   }
-  else{
-    $growtime = 20;
-  }
+
   //if there is time left to grow
-  if ($diffh > $growtime ){
+  if ((($state == 2 || $state == 3) && ($diffh > $growtime ) ) || ($diffh > $harvesttime) {
 
     //do the growing
     $state += 1;
