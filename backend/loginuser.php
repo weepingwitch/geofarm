@@ -40,14 +40,14 @@ if(isset($_COOKIE['geofarmid'])){
 else {
   echo "attempting to log in " . $_POST["username"];
   $username = $_POST['username'];
-  $password =  password_hash($conn->real_escape_string($_POST["password"]),PASSWORD_BCRYPT);
+  $password =  $_POST["password"];
 
   $sql = "SELECT * FROM `users` WHERE `username` = '$username'";
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0){
 $row = $result->fetch_assoc();
-    if ($password != $row['passwordhash'])
+    if (!password_verify($password,$row['passwordhash']))
     {
       die("wrong password :(");}
       else{
