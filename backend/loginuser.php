@@ -11,7 +11,7 @@ if(isset($_COOKIE['geofarmid'])){
   if ($result->num_rows > 0){
     $row = $result->fetch_assoc();
 
-    if ($pass != $row['password'])
+    if ($pass != $row['passwordhash'])
             {
               echo "wrong password :(";
                 $_SESSION['new'] = 0;

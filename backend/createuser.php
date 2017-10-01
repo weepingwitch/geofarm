@@ -11,7 +11,7 @@ if(isset($_COOKIE['geofarmid'])){
   if ($result->num_rows > 0){
     $row = $result->fetch_assoc();
 
-    if ($pass != $row['password'])
+    if ($pass != $row['passwordhash'])
             {
               echo "wrong password :(";
                 $_SESSION['new'] = 0;
@@ -37,14 +37,44 @@ if(isset($_COOKIE['geofarmid'])){
 
 else {
 
+  if (empty($_POST['username'])) {
+              die("no username entered");
+          }
+  if(empty(S_POST['password'])){
+    die("no password entered");
+  }
+
 
 $newusername = $_POST['username'];
 $newpassword =  password_hash($conn->real_escape_string($_POST["password"]),PASSWORD_BCRYPT);
-echo $newusername;
-echo $newpassword;
-if (password_verify($_POST["password"],$newpassword))
-echo "YAY";
+
+$sql = "SELECT * FROM `users` WHERE `username` = '$newusername'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0){
+
+echo "that account already exists... sorry!";
+
 }
+else{
+  $sql = "INSERT INTO users (username, passwordhash, gold, fertilizer)
+                             VALUES('" . $newusername . "', '" . $newpasswordhash . "', 25,5);";
+                     $query_new_user_insert = $conn->query($sql);
+                     // if user has been added successfully
+                     if ($query_new_user_insert) {
+                        echo "user created!!!";
+
+
+
+                     } else {
+                        die("oh no");
+                     }
+
+
+
+
+}
+
 
 
 
