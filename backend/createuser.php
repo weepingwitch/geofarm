@@ -58,7 +58,7 @@ echo "that account already exists... sorry!";
 }
 else{
   $sql = "INSERT INTO users (username, passwordhash, gold, fertilizer)
-                             VALUES('" . $newusername . "', '" . $newpasswordhash . "', 25,5);";
+                             VALUES('" . $newusername . "', '" . $newpassword . "', 25,5);";
                      $query_new_user_insert = $conn->query($sql);
                      // if user has been added successfully
                      if ($query_new_user_insert) {
