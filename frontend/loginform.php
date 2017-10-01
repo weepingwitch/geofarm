@@ -1,7 +1,45 @@
 <?php
+include("dbconnect.php");
+
+if(isset($_COOKIE['geofarmid'])){
+  $username = $_COOKIE['geofarmid'];
+  $pass = $_COOKIE['geofarmpass'];
+
+  $sql = "SELECT * FROM `users` WHERE `username` = '$username'";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0){
+    $row = $result->fetch_assoc();
+
+    if ($pass != $row['password'])
+            {
+              echo "wrong password :(";
+                $_SESSION['new'] = 0;
+              header("Location: logout.php");
+            }
+
+    else
+            {
+                    $_SESSION['new'] = 0;
+            header("locframe.html");
+
+            }
+
+
+
+
+  } else {
+    echo "wrong password :(";
+      $_SESSION['new'] = 0;
+    header("Location: logout.php");
+  }
+}
+
+
 
 
  ?>
+
 
  <html>
 
@@ -112,6 +150,9 @@ $(document).ready(function() {
             });
             $("#register").click(function(){
                 $("#div1").html("registering!");
+                var uname = $("#username").val();
+                var pword = $("#password").val();
+                $("div1").load("../backend/createuser.php",{username:uname;password:pword});
             });
         });
 

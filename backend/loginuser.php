@@ -21,7 +21,7 @@ if(isset($_COOKIE['geofarmid'])){
     else
             {
                     $_SESSION['new'] = 0;
-            echo "LOGGED TEH FUCK IN";
+              header("locframe.html");
 
             }
 
@@ -29,7 +29,9 @@ if(isset($_COOKIE['geofarmid'])){
 
 
   } else {
-      echo "0 results";
+    echo "wrong password :(";
+      $_SESSION['new'] = 0;
+    header("Location: logout.php");
   }
 }
 
