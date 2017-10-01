@@ -101,13 +101,20 @@ width:768px;
 <div id="div1">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
+$(document).ready(function() {
+            //option A
+            $("form").submit(function(e){
+                e.preventDefault(e);
+            });
 
-$("#login").click(function(){
-    $("#div1").html("logging in!");
-});
-$("#register").click(function(){
-    $("#div1").html("registering!");
-});
+            $("#login").click(function(){
+                $("#div1").html("logging in!");
+            });
+            $("#register").click(function(){
+                $("#div1").html("registering!");
+            });
+        });
+
 </script>
 
 
