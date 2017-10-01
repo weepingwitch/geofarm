@@ -147,6 +147,9 @@ $(document).ready(function() {
 
             $("#login").click(function(){
                 $("#div1").html("logging in!");
+                var uname = $("#username").val();
+                var pword = $("#password").val();
+                $("#div1").load("../backend/loginuser.php",{username:uname,password:pword});
             });
             $("#register").click(function(){
                 $("#div1").html("registering!");
