@@ -20,7 +20,7 @@ $state = 2;
 //5 - dead
 
 // FETCH WHETHER IT WAS WATERED FROM THE DATABASE
-$watered = true;
+$watered = false;
 
 // DO WE TRY TO GROW?
 if ($state >= 2 && $state <= 4){
@@ -51,7 +51,7 @@ while($cangrow){
     $row = $result->fetch_assoc();
     $growtime = $row['growtime'];
     $harvesttime = $row['harvesttime'];
-    echo $harvesttime;
+
 
   } else {
       echo "0 results";
