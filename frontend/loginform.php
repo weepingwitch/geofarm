@@ -56,6 +56,7 @@ img.avatar {
 form {
 width:768px;
     margin-left: auto;
+    margin-right:auto;
 
 }
 }
