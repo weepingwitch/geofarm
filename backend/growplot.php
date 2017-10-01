@@ -47,7 +47,7 @@ while($cangrow){
   $sql = "SELECT * FROM `planttypes` WHERE `id` = '$type'";
   $result = $conn->query($sql);
 
-  if ($result->num_rows > 0)
+  if ($result->num_rows > 0){
     $row = $result->fetch_assoc();
     $growtime = $row['growtime'];
     $harvesttime = $row['harvesttime'];
