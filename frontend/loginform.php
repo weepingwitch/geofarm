@@ -53,8 +53,9 @@ img.avatar {
 
 
 @media only screen and (min-width: 769px) {
-.container {
+form {
 width:768px;
+    margin-left: auto;
 
 }
 }
