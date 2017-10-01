@@ -89,16 +89,26 @@ width:768px;
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
 
-    <button type="submit" name="login" id="login">Login</button>
+    <button name="login" id="login">Login</button>
 
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="submit" name="register" id="register">Register</button>
+    <button  name="register" id="register">Register</button>
   </div>
 </form>
 
+<div id="div1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
 
+$("#login").click(function(){
+    $("#div1").html("logging in!");
+});
+$("#register").click(function(){
+    $("#div1").html("registering!");
+});
+</script>
 
 
 </body>
