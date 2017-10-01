@@ -42,8 +42,8 @@ $newusername = $_POST['username'];
 $newpassword =  password_hash($conn->real_escape_string($_POST["password"]),PASSWORD_BCRYPT);
 echo $newusername;
 echo $newpassword;
-
-
+if (password_verify($_POST["password"],$newpassword))
+echo "YAY";
 }
 
 
