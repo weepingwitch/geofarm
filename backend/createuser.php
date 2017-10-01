@@ -40,7 +40,7 @@ else {
   if (empty($_POST['username'])) {
               die("no username entered");
           }
-  if(empty(S_POST['password'])){
+  if(empty($_POST['password'])){
     die("no password entered");
   }
 
