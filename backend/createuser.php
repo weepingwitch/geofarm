@@ -39,7 +39,7 @@ else {
 
 
 $newusername = $_POST['username'];
-$newpassword =  password_hash($conn->mysqli_real_escape_string($_POST["password"]),PASSWORD_BCRYPT);
+$newpassword =  password_hash($conn->real_escape_string($_POST["password"]),PASSWORD_BCRYPT);
 echo $newusername;
 echo $newpassword;
 
