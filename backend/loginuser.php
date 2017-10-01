@@ -36,7 +36,10 @@ if(isset($_COOKIE['geofarmid'])){
 }
 
 else {
-  echo "no cookie";
+  echo "attempting to log in " . $_POST["username"];
+
+
+
 }
 
 

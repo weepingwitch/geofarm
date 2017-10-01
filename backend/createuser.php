@@ -64,6 +64,8 @@ else{
                      if ($query_new_user_insert) {
                         echo "user created!!!";
 
+                        include("loginuser.php");
+
 
 
                      } else {
