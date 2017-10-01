@@ -152,7 +152,7 @@ $(document).ready(function() {
                 $("#div1").html("registering!");
                 var uname = $("#username").val();
                 var pword = $("#password").val();
-                $("div1").load("../backend/createuser.php",{username:uname;password:pword});
+                $("div1").load("../backend/createuser.php",{username:uname,password:pword});
             });
         });
 
