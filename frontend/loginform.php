@@ -47,7 +47,7 @@ if(isset($_COOKIE['geofarmid'])){
 
 <style type="text/css">
 /* Bordered form */
-form {
+.formbox {
     border: 3px solid #f1f1f1;
 }
 
@@ -92,7 +92,7 @@ img.avatar {
 
 
 @media only screen and (min-width: 769px) {
-form {
+.formbox {
 width:768px;
     margin-left: auto;
     margin-right:auto;
@@ -115,7 +115,7 @@ width:768px;
 
 <body>
 
-  <form>
+  <div class="formbox">
   <!--<div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>-->
@@ -134,7 +134,7 @@ width:768px;
   <div class="container" style="background-color:#f1f1f1">
     <button  name="register" id="register">Register</button>
   </div>
-</form>
+</div>
 
 <div id="div1">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
