@@ -24,7 +24,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: #4CAF50;
+    background-color: #bbbbbb;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -51,9 +51,19 @@ img.avatar {
     border-radius: 50%;
 }
 
+
+@media only screen and (min-width: 769px) {
+.container {
+width:768px;
+
+}
+}
+
+
 /* Add padding to containers */
 .container {
     padding: 16px;
+
 }
 
 
@@ -81,8 +91,11 @@ img.avatar {
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="submit" name="register" id="register">register`</button>
+    <button type="submit" name="register" id="register">Register</button>
   </div>
 </form>
+
+
+
 
 </body>
