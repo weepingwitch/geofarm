@@ -63,7 +63,7 @@ while($cangrow){
   }
 
   //if there is time left to grow
-  if ((($state == 2 || $state == 3) && ($diffh > $growtime ) ) || ($diffh > $harvesttime) {
+  if ((($state == 2 || $state == 3) && ($diffh > $growtime ) ) || ($diffh > $harvesttime)) {
 
     //do the growing
     $state += 1;
