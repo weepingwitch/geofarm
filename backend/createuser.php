@@ -20,7 +20,9 @@ if(isset($_COOKIE['geofarmid'])){
 
     else
             {
+
                     $_SESSION['new'] = 0;
+                    $_SESSION['username'] = $username;
             header("locframe.html");
 
             }
@@ -29,7 +31,7 @@ if(isset($_COOKIE['geofarmid'])){
 
 
   } else {
-    echo "wrong password :(";
+
       $_SESSION['new'] = 0;
     header("Location: logout.php");
   }

@@ -21,6 +21,7 @@ if(isset($_COOKIE['geofarmid'])){
     else
             {
                     $_SESSION['new'] = 0;
+                    $_SESSION['username'] = $username;
             header("locframe.html");
 
             }
