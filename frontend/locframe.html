@@ -23,10 +23,24 @@
     },
     function(failure) {
       document.writeln("geoloc failed :(");
+      var fileloc = "backend/visitfarm.php";
+      var lurl = ""+0+""+0;
+      lurl = lurl.split('.').join('');
+      lurl = lurl.split('-').join('');
+
+
+      $('#maincontent').load(fileloc, {s:lurl});
     }
   );
 } else {
   document.writeln("no geolocation :(");
+  var fileloc = "backend/visitfarm.php";
+  var lurl = ""+0+""+0;
+  lurl = lurl.split('.').join('');
+  lurl = lurl.split('-').join('');
+
+
+  $('#maincontent').load(fileloc, {s:lurl});
 }
 
 function updatepage(rlat, rlng)

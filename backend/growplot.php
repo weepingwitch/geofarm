@@ -27,7 +27,7 @@ if ($state >= 2 && $state <= 4){
   //HERE IS WHERE WE WOULD FETCH THE ORIGTIME FROM THE DATABASE
   $origtime = new DateTime("2017-09-29 17:34:01");
   $now = new DateTime();
-  e//cho "time: "  . $now->getTimestamp();
+  //echo "time: "  . $now->getTimestamp();
   //calculate number of hours since last updated
   $diff =  $origtime->diff($now);
   $diffh = $diff->h;
