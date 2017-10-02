@@ -16,10 +16,10 @@ echo "<BR>";
 
 echo "<table border='1' style='width:100%;'>";
 
-for($tr=1;$tr<=4;$tr++){
+for($tr=1;$tr<=5;$tr++){
 
     echo "<tr>";
-        for($td=1;$td<=5;$td++){
+        for($td=1;$td<=4;$td++){
                echo "<td align='center'>".$tr*$td."</td>";
         }
     echo "</tr>";
