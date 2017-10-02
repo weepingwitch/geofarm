@@ -8,6 +8,9 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0){
 
 echo "this plot has been visited " . $result->num_rows . " times!<BR>";
+$sql = "INSERT INTO visits (userid,seed,lastgifted)
+VALUES('" . $userid . "', '" . $seed . "', '" . $now ."');";
+$queryc = $conn->query($sql);
 
 }
 else{
