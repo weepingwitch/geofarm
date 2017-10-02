@@ -2,6 +2,27 @@
 $seed = $_POST['s'];
 include("dbconnect.php");
 
+
+$username = $_SESSION['username'];
+echo $username;
+$sql = "SELECT * FROM `users` WHERE `username` = '$username'";
+$result = $conn->query($sql);
+
+
+if ($result->num_rows > 0){
+  $row = $result->fetch_assoc();
+  $userid = $row['id'];
+}
+else{
+  die("usernotfound");
+}
+
+$now = new DateTime();
+$now = $now->format("U");
+
+
+
+
 $sql = "SELECT * FROM `visits` WHERE `seed` = '$seed'";
 $result = $conn->query($sql);
 
@@ -15,21 +36,8 @@ $queryc = $conn->query($sql);
 }
 else{
 
-  $username = $_SESSION['username'];
-  echo $username;
-  $sql = "SELECT * FROM `users` WHERE `username` = '$username'";
-  $result = $conn->query($sql);
 
-  if ($result->num_rows > 0){
-    $row = $result->fetch_assoc();
-    $userid = $row['id'];
-  }
-  else{
-    die("usernotfound");
-  }
 
-  $now = new DateTime();
-  $now = $now->format("U");
   $sql = "INSERT INTO visits (userid,seed,lastgifted)
   VALUES('" . $userid . "', '" . $seed . "', '" . $now ."');";
   $queryc = $conn->query($sql);
