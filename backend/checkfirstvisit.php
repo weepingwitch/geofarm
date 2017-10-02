@@ -34,8 +34,8 @@ else{
   if ($queryc) {
 
     for ($num = 0; $num < 20; $num++){
-      $sql = "INSERT INTO tiles (seed,num,type,state,watered,fertilized)
-      VALUES('" . $seed . "', '" . $num . "', 0,0,0,0);";
+      $sql = "INSERT INTO tiles (seed,num,type,state,watered,fertilized,lasttouched)
+      VALUES('" . $seed . "', '" . $num . "', 0,0,0,0," . $now .");";
       $queryc = $conn->query($sql);
     }
 

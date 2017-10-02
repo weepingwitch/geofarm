@@ -23,7 +23,8 @@ $state = $row['state'];
 //5 - dead
 
 // FETCH WHETHER IT WAS WATERED FROM THE DATABASE
-$watered = $row['watered'];;
+$watered = $row['watered'];
+$fertilized = $row['fertilized'];;
 
 // DO WE TRY TO GROW?
 if ($state >= 2 && $state <= 4){
