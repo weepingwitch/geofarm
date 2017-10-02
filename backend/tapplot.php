@@ -1,4 +1,6 @@
 <?php
+include("backend/dbconnect.php");
+
 $seed = $_POST['s'];
 $numb = $_POST['n'];
 
