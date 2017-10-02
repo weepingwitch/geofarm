@@ -58,6 +58,7 @@ $row = $result->fetch_assoc();
         setcookie("geofarmpass",$row['passwordhash'],2147483647);
 
         $_SESSION['username'] = $username;
+        echo "logged the fuck in";
         header("locframe.html");
 
 
