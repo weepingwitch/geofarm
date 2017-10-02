@@ -26,7 +26,7 @@ if(isset($_COOKIE['geofarmid'])){
       $_SESSION['new'] = 0;
       $_SESSION['username'] = $username;
       echo "Logged in from cookie!";
-      echo "<script>parent.self.location='index.php';</script>";
+      echo "<script>parent.self.location='../index.php';</script>";
 
     }
 
@@ -57,13 +57,13 @@ $row = $result->fetch_assoc();
 
 
 
-        setcookie("geofarmid",$username,214748364) or die("no cookie");
+        setcookie("geofarmid",$username,214748364);
         setcookie("geofarmpass",$row['passwordhash'],214748364);
 
         $_SESSION['username'] = $username;
         echo "logged in";
         echo "<script>alert('cookie created');</script>";
-        echo "<script>parent.self.location='index.php';</script>";
+        echo "<script>parent.self.location='../index.php';</script>";
 
 
 

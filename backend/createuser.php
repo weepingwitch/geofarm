@@ -15,7 +15,7 @@ if(isset($_COOKIE['geofarmid'])){
             {
               echo "wrong password :(";
                 $_SESSION['new'] = 0;
-              echo "<script>parent.self.location='backend/logout.php';</script>";
+              echo "<script>parent.self.location='logout.php';</script>";
             }
 
     else
@@ -23,7 +23,7 @@ if(isset($_COOKIE['geofarmid'])){
 
                     $_SESSION['new'] = 0;
                     $_SESSION['username'] = $username;
-          echo "<script>parent.self.location='index.php';</script>";
+          echo "<script>parent.self.location='../index.php';</script>";
 
             }
 
@@ -33,7 +33,7 @@ if(isset($_COOKIE['geofarmid'])){
   } else {
 
       $_SESSION['new'] = 0;
-    echo "<script>parent.self.location='backend/logout.php';</script>";
+    echo "<script>parent.self.location='logout.php';</script>";
   }
 }
 
@@ -66,7 +66,7 @@ else{
                      if ($query_new_user_insert) {
                         echo "user created!!!";
 
-                        include("loginuser.php");
+                        echo "<script>parent.self.location='loginuser.php';</script>";
 
 
 

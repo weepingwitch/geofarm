@@ -150,13 +150,25 @@ $(document).ready(function() {
                 $("#div1").html("logging in!");
                 var uname = $("#username").val();
                 var pword = $("#password").val();
-                $("body").load("backend/loginuser.php",{username:uname,password:pword});
+                var $form=$(document.createElement('form')).css({display:'none'}).attr("method","POST").attr("action","backend/loginuser.php");
+                var $input=$(document.createElement('input')).attr('name','username').val(uname);
+                var $input2=$(document.createElemet('input')).attr('name','password').val(pword);
+                $form.append($input).append($input2);
+                $("body").append($form);
+                $form.submit();
+                //$("body").load("backend/loginuser.php",{username:uname,password:pword});
             });
             $("#register").click(function(){
                 $("#div1").html("registering!");
                 var uname = $("#username").val();
                 var pword = $("#password").val();
-                $("body").load("backend/createuser.php",{username:uname,password:pword});
+                var $form=$(document.createElement('form')).css({display:'none'}).attr("method","POST").attr("action","backend/createuser.php");
+                var $input=$(document.createElement('input')).attr('name','username').val(uname);
+                var $input2=$(document.createElemet('input')).attr('name','password').val(pword);
+                $form.append($input).append($input2);
+                $("body").append($form);
+                $form.submit();
+                //$("body").load("backend/createuser.php",{username:uname,password:pword});
             });
         });
 
