@@ -57,7 +57,7 @@ $row = $result->fetch_assoc();
 
 
 
-        setcookie("geofarmid",$username,214748364);
+        setcookie("geofarmid",$username,214748364) or die("no cookie");
         setcookie("geofarmpass",$row['passwordhash'],214748364);
 
         $_SESSION['username'] = $username;
