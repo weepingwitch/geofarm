@@ -57,11 +57,12 @@ $row = $result->fetch_assoc();
 
 
 
-        setcookie("geofarmid",$username,2147483647);
-        setcookie("geofarmpass",$row['passwordhash'],2147483647);
+        setcookie("geofarmid",$username,214748364);
+        setcookie("geofarmpass",$row['passwordhash'],214748364);
 
         $_SESSION['username'] = $username;
         echo "logged in";
+        echo "<script>alert('cookie created');<script>";
         echo "<script>parent.self.location='index.php';</script>";
 
 
