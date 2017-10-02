@@ -44,18 +44,18 @@ else{
 
   }
 
+
+
+
+}
+
+
 if ($needsupdate){
   $_POST['xnewvalx'] = $state;
   include("updateplot.php");
 }
 
-
-}
-
-
-
-
-
+echo "<script>parent.self.location='index.php';</script>";
 
 
 

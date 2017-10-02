@@ -138,7 +138,7 @@ width:768px;
   </div>
 </div>
 
-<div id="div1">
+<div id="div1"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
 function post(path, params, method) {
