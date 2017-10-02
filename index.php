@@ -36,6 +36,7 @@ if(isset($_COOKIE['geofarmid'])){
   }
 }
 else{
+  echo "NO COOKIE:";
   include("frontend/loginform.php");
 }
 
