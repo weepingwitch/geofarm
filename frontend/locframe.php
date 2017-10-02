@@ -115,7 +115,12 @@ body{
 /*  background-image:url("art/0x0.png"); */
 }
 .tileimg {
-  image-rendering:pixelated;
+  -ms-interpolation-mode: nearest-neighbor;
+image-rendering: -webkit-optimize-contrast;
+image-rendering: -webkit-crisp-edges;
+image-rendering: -moz-crisp-edges;
+image-rendering: -o-crisp-edges;
+image-rendering: pixelated;
   width:100%;
   display:block;
 }
