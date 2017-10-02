@@ -20,7 +20,7 @@ else{
     $userid = $row['id'];
   }
 
-  $now = new DateTime();
+  $now = new DateTime()->format("U");
   $sql = "INSERT INTO visits (userid,seed,lastgifted)
   VALUES('" . $userid . "', '" . $seed . "', '" . $now ."');";
   $queryc = $conn->query($sql);
