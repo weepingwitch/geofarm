@@ -13,7 +13,7 @@ if(isset($_COOKIE['geofarmid'])){
 
     if ($pass != $row['passwordhash'])
     {
-      echo "wrong password :(";
+      die("wrong password :(");
       $_SESSION['new'] = 0;
       //header("Location: logout.php");
     }
@@ -31,7 +31,7 @@ if(isset($_COOKIE['geofarmid'])){
 
 
   } else {
-    echo "username doesn't exist";
+     die("username doesn't exist");
     $_SESSION['new'] = 0;
   //  header("Location: logout.php");
   }
