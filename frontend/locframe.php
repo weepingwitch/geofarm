@@ -106,6 +106,18 @@ function updatepage(rlat, rlng)
 
 
 </script>
+
+
+<style type="text/css">
+@media only screen and (min-width: 769px) {
+#farmgrid {
+width:768px;
+    margin-left: auto;
+    margin-right:auto;
+
+}
+}
+</style>
 </head>
 <body>
 
