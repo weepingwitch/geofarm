@@ -17,26 +17,10 @@ echo "<BR><BR><a href='backend/logout.php'>logout</a><Br><BR>";
 
 
 echo "<BR>";
+echo "<div id='farmgoeshere'>";
+include("farmgrid.php");
+echo "</div>";
 
-echo "<table border='1' style='height:70%;' id='farmgrid'>";
-
-$num = 0;
-for($tr=1;$tr<=5;$tr++){
-
-    echo "<tr style='height:20%;'>";
-        for($td=1;$td<=4;$td++){
-               echo "<td align='center' style='width:25%;'>";
-
-               $_POST['n'] = $num;
-               include("viewplot.php");
-
-               echo "</td>";
-               $num += 1;
-        }
-    echo "</tr>";
-}
-
-echo "</table>";
 echo "<div id='seeddiv' style='visibility:hidden;'>" . $seed . "</div>";
 
 ?>
@@ -73,7 +57,7 @@ echo "<div id='seeddiv' style='visibility:hidden;'>" . $seed . "</div>";
 
                   var s = $("#seeddiv").text();
                   var n = $(this).attr('id');
-                  post("backend/tapplot.php",{s:s,n:n});
+                  $("#farmgoeshere").Load("backend/tapplot.php",{s:s,n:n});
                   //$("body").load("backend/loginuser.php",{username:uname,password:pword});
               });
 

@@ -57,7 +57,7 @@ if ($needsupdate){
   include("updateplot.php");
 }
 
-echo "<script>parent.self.location='../index.php';</script>";
+include("farmgrid.php");
 
 
 
