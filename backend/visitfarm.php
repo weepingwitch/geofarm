@@ -49,6 +49,17 @@ echo "<div id='seeddiv' style='visibility:hidden;'>" . $seed . "</div>";
       document.body.appendChild(form);
       form.submit();
   }
+function rebind(){
+  $(".tile").click(function(){
+
+      var s = $("#seeddiv").text();
+      var n = $(this).attr('id');
+      $("#farmgoeshere").load("backend/tapplot.php",{s:s,n:n});
+      rebind();
+      //$("body").load("backend/loginuser.php",{username:uname,password:pword});
+  });
+}
+
   $(document).ready(function() {
               //option A
 
@@ -58,6 +69,7 @@ echo "<div id='seeddiv' style='visibility:hidden;'>" . $seed . "</div>";
                   var s = $("#seeddiv").text();
                   var n = $(this).attr('id');
                   $("#farmgoeshere").load("backend/tapplot.php",{s:s,n:n});
+                  rebind();
                   //$("body").load("backend/loginuser.php",{username:uname,password:pword});
               });
 
