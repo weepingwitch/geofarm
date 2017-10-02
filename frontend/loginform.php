@@ -1,5 +1,5 @@
 <?php
-include("../backend/dbconnect.php");
+include("backend/dbconnect.php");
 
 if(isset($_COOKIE['geofarmid'])){
   $username = $_COOKIE['geofarmid'];
