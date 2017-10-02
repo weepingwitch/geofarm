@@ -20,7 +20,7 @@ for($tr=1;$tr<=5;$tr++){
 
     echo "<tr>";
         for($td=1;$td<=4;$td++){
-               echo "<td align='center'>".$tr*$td."</td>";
+               echo "<td align='center' style='width:25%;'>".$tr*$td."</td>";
         }
     echo "</tr>";
 }
