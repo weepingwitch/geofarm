@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("backend/dbconnect.php");
 
 if(isset($_COOKIE['geofarmid'])){
