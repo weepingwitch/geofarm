@@ -119,11 +119,13 @@ body{
   width:100%;
   display:block;
 }
+
 td {
   padding:0px;
 }
 #farmgrid {
 width:100%;
+
 }
 @media only screen and (min-width: 769px) {
 #farmgrid {

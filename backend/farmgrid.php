@@ -1,5 +1,5 @@
 <?php
-echo "<table border='0' style='height:70%;' id='farmgrid'>";
+echo "<table border='0' cellspacing='0' cellpadding='0' style='height:70%;' id='farmgrid'>";
 
 $num = 0;
 for($tr=1;$tr<=5;$tr++){
