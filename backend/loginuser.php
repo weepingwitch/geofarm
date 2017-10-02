@@ -13,8 +13,10 @@ if(isset($_COOKIE['geofarmid'])){
 
     if ($pass != $row['passwordhash'])
     {
-      die("wrong password :(");
       $_SESSION['new'] = 0;
+      echo "<script>parent.self.location='logout.php';</script>";
+      //die("wrong password :(");
+
       //header("Location: logout.php");
     }
 
@@ -24,7 +26,7 @@ if(isset($_COOKIE['geofarmid'])){
       $_SESSION['new'] = 0;
       $_SESSION['username'] = $username;
       echo "Logged in from cookie!";
-      header("locframe.php");
+      echo "<script>parent.self.location='../frontend/locframe.php';</script>";
 
     }
 
@@ -59,8 +61,8 @@ $row = $result->fetch_assoc();
         setcookie("geofarmpass",$row['passwordhash'],2147483647);
 
         $_SESSION['username'] = $username;
-        echo "logged the fuck in";
-        header("locframe.php");
+        echo "logged in";
+        echo "<script>parent.self.location='../frontend/locframe.php';</script>";
 
 
 
