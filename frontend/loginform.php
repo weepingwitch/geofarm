@@ -15,14 +15,14 @@ if(isset($_COOKIE['geofarmid'])){
             {
               echo "wrong password :(";
                 $_SESSION['new'] = 0;
-              echo "<script>parent.self.location='logout.php';</script>";
+              echo "<script>parent.self.location='backend/logout.php';</script>";
             }
 
     else
             {
                     $_SESSION['new'] = 0;
                     $_SESSION['username'] = $username;
-            echo "<script>parent.self.location='../index.php';</script>";
+            echo "<script>parent.self.location='index.php';</script>";
 
             }
 
@@ -32,7 +32,7 @@ if(isset($_COOKIE['geofarmid'])){
   } else {
     echo "wrong password :(";
       $_SESSION['new'] = 0;
-    header("Location: logout.php");
+    header("Location: backend/logout.php");
   }
 }
 
