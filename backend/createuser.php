@@ -67,8 +67,11 @@ else{
                         echo "user created!!!";
                         $_POST['username'] = $newusername;
                         $_POST['password'] = $newpassword;
+                        setcookie("geofarmid",$newusername,time() + (10 * 365 * 24 * 60 * 60),"/", "",  0);
+                        setcookie("geofarmpass",$newpassword,time() + (10 * 365 * 24 * 60 * 60),"/", "",  0);
 
-                        echo "<script>parent.self.location='loginuser.php';</script>";
+                        $_SESSION['username'] = $username;
+                        echo "<script>parent.self.location='index.php';</script>";
 
 
 
