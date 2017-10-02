@@ -65,6 +65,8 @@ else{
                      // if user has been added successfully
                      if ($query_new_user_insert) {
                         echo "user created!!!";
+                        $_POST['username'] = $newusername;
+                        $_POST['password'] = $newpassword;
 
                         echo "<script>parent.self.location='loginuser.php';</script>";
 
