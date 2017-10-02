@@ -28,11 +28,18 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0){
 
-echo "this plot has been visited " . $result->num_rows . " times!<BR>";
-$sql = "INSERT INTO visits (userid,seed,lastgifted)
-VALUES('" . $userid . "', '" . $seed . "', '" . $now ."');";
-$queryc = $conn->query($sql);
+  echo "this plot has been visited " . $result->num_rows . " times!<BR>";
 
+
+  $sql = "SELECT * FROM `visits` WHERE `seed` = '$seed' AND `userid` = '$userid'";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows == 0){
+
+    $sql = "INSERT INTO visits (userid,seed,lastgifted)
+    VALUES('" . $userid . "', '" . $seed . "', '" . $now ."');";
+    $queryc = $conn->query($sql);
+  }
 }
 else{
 
@@ -41,7 +48,7 @@ else{
   $sql = "INSERT INTO visits (userid,seed,lastgifted)
   VALUES('" . $userid . "', '" . $seed . "', '" . $now ."');";
   $queryc = $conn->query($sql);
-  // if user has been added successfully
+
   if ($queryc) {
 
     for ($num = 0; $num < 20; $num++){
@@ -64,4 +71,4 @@ else{
 }
 
 
-  ?>
+?>
