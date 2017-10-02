@@ -2,15 +2,18 @@
 
 $needsupdate = false;
 
+$sql = "SELECT * FROM `tiles` WHERE `seed` = '$seed' AND `num` = '$numb'";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
 //HERE IS WHERE WE WOULD FETCH THE PLANT TYPE FROM THE DATABSE
-$type = 1;
+$type = $row['type'];
 // TYPE VALUES
 //0 - uhh
 //1 - flowers
 
 
 // HERE IS WHERE WE WOULD FETCH THE STATE FROM THE DATABSE
-$state = 2;
+$state = $row['state'];
 // STATE VALUES
 //0 - grass
 //1 - tilled soil
@@ -20,13 +23,15 @@ $state = 2;
 //5 - dead
 
 // FETCH WHETHER IT WAS WATERED FROM THE DATABASE
-$watered = false;
+$watered = $row['watered'];;
 
 // DO WE TRY TO GROW?
 if ($state >= 2 && $state <= 4){
   $cangrow = true;
   //HERE IS WHERE WE WOULD FETCH THE ORIGTIME FROM THE DATABASE
-  $origtime = new DateTime("2017-09-30 17:34:01");
+
+  $origtime = new DateTime();
+  $origtime->setTimestamp($row['lasttouched']);
   $now = new DateTime();
   //echo "time: "  . $now->getTimestamp();
   //calculate number of hours since last updated
