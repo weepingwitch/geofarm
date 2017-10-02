@@ -11,13 +11,18 @@ echo "already exists";
 
 }
 else{
-  
+
+  $username = $_SESSION['username'];
+  echo $username;
   $sql = "SELECT * FROM `users` WHERE `username` = '$username'";
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0){
     $row = $result->fetch_assoc();
     $userid = $row['id'];
+  }
+  else{
+    die("usernotfound");
   }
 
   $now = new DateTime();
