@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include("passwords.php");
 
 // Create connection
