@@ -71,7 +71,7 @@ else{
                         setcookie("geofarmpass",$newpassword,time() + (10 * 365 * 24 * 60 * 60),"/", "",  0);
 
                         $_SESSION['username'] = $username;
-                        echo "<script>parent.self.location='index.php';</script>";
+                        echo "<script>parent.self.location='../index.php';</script>";
 
 
 
