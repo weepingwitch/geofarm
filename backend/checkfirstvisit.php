@@ -14,7 +14,7 @@ if ($result->num_rows > 0){
 
 
 
-  echo "need to make a new farm lol";
+  echo "need to make a new farm lol<BR><BR>";
   }
 
 
