@@ -11,7 +11,7 @@ echo "already exists";
 
 }
 else{
-  $username = $_SESSION['username'];
+  
   $sql = "SELECT * FROM `users` WHERE `username` = '$username'";
   $result = $conn->query($sql);
 
