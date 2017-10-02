@@ -153,9 +153,9 @@ $(document).ready(function() {
                 var form=$(document.createElement('form')).css({display:'none'}).attr("method","POST").attr("action","backend/loginuser.php");
                 var input=$(document.createElement('input')).attr('name','username').val(uname);
                 var input2=$(document.createElemet('input')).attr('name','password').val(pword);
-                form.append(input).append(input2);
-                $("body").append(form);
-                form.submit();
+                $form.append($input).append($input2);
+                $("body").append($form);
+                $form.submit();
                 //$("body").load("backend/loginuser.php",{username:uname,password:pword});
             });
             $("#register").click(function(){
