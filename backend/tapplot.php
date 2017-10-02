@@ -1,8 +1,12 @@
 <?php
 $seed = $_POST['s'];
-$num = $_POST['n'];
+$numb = $_POST['n'];
 
 $needsupdate = false;
+
+$sql = "SELECT * FROM `tiles` WHERE `seed` = '$seed' AND `num` = '$numb'";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
 
 
 //get current seed from the database based on yr user
@@ -10,7 +14,7 @@ $seedtype = 0;
 
 
 //get value from the database
-$state = 0;
+$state = $row['state'];
 // STATE VALUES
 //0 - grass
 //1 - tilled soil
