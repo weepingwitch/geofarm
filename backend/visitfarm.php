@@ -3,6 +3,7 @@ $seed = $_POST['s'];
 mt_srand(intval($seed));
 
 include("dbconnect.php");
+include("checkfirstvisit.php");
 
 echo "visiting plot number " . $seed;
 
