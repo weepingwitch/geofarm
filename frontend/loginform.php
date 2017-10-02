@@ -22,7 +22,7 @@ if(isset($_COOKIE['geofarmid'])){
             {
                     $_SESSION['new'] = 0;
                     $_SESSION['username'] = $username;
-            header("locframe.html");
+            header("locframe.php");
 
             }
 

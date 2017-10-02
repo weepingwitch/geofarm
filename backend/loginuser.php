@@ -24,7 +24,7 @@ if(isset($_COOKIE['geofarmid'])){
       $_SESSION['new'] = 0;
       $_SESSION['username'] = $username;
       echo "Logged in from cookie!";
-      header("locframe.html");
+      header("locframe.php");
 
     }
 
@@ -60,7 +60,7 @@ $row = $result->fetch_assoc();
 
         $_SESSION['username'] = $username;
         echo "logged the fuck in";
-        header("locframe.html");
+        header("locframe.php");
 
 
 
