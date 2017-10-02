@@ -62,7 +62,7 @@ $row = $result->fetch_assoc();
 
         $_SESSION['username'] = $username;
         echo "logged in";
-        echo "<script>alert('cookie created');<script>";
+        echo "<script>alert('cookie created');</script>";
         echo "<script>parent.self.location='index.php';</script>";
 
 
