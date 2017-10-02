@@ -25,8 +25,8 @@ if(isset($_COOKIE['geofarmid'])){
 
       $_SESSION['new'] = 0;
       $_SESSION['username'] = $username;
-      setcookie("geofarmid",$username,time() + 3600);
-      setcookie("geofarmpass",$row['passwordhash'],time() + 3600);
+      setcookie("geofarmid",$username,time() + 3600,"/", "",  0);
+      setcookie("geofarmpass",$row['passwordhash'],time() + 3600,"/", "",  0);
       echo "Logged in from cookie!";
 
       if(isset($_COOKIE['geofarmid'])){
@@ -66,8 +66,8 @@ $row = $result->fetch_assoc();
 
 
 
-        setcookie("geofarmid",$username,time() + 3600);
-        setcookie("geofarmpass",$row['passwordhash'],time() + 3600);
+        setcookie("geofarmid",$username,time() + 3600,"/", "",  0);
+        setcookie("geofarmpass",$row['passwordhash'],time() + 3600,"/", "",  0);
 
         $_SESSION['username'] = $username;
         echo "logged in";
