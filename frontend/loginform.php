@@ -165,9 +165,7 @@ function post(path, params, method) {
 }
 $(document).ready(function() {
             //option A
-            $("form").submit(function(e){
-                e.preventDefault(e);
-            });
+
 
             $("#login").click(function(){
                 $("#div1").html("logging in!");
