@@ -23,7 +23,7 @@ if(isset($_COOKIE['geofarmid'])){
 
                     $_SESSION['new'] = 0;
                     $_SESSION['username'] = $username;
-            echo "<script>parent.self.location='../frontend/locframe.php';</script>";
+          echo "<script>parent.self.location='../index.php';</script>";
 
             }
 

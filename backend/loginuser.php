@@ -26,7 +26,7 @@ if(isset($_COOKIE['geofarmid'])){
       $_SESSION['new'] = 0;
       $_SESSION['username'] = $username;
       echo "Logged in from cookie!";
-      echo "<script>parent.self.location='../frontend/locframe.php';</script>";
+      echo "<script>parent.self.location='../index.php';</script>";
 
     }
 
@@ -62,7 +62,7 @@ $row = $result->fetch_assoc();
 
         $_SESSION['username'] = $username;
         echo "logged in";
-        echo "<script>parent.self.location='../frontend/locframe.php';</script>";
+        echo "<script>parent.self.location='../index.php';</script>";
 
 
 
