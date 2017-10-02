@@ -7,7 +7,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0){
 
-echo "already exists";
+echo "this plot has been visited " . $result->num_rows . " times!";
 
 }
 else{
@@ -32,7 +32,18 @@ else{
   $queryc = $conn->query($sql);
   // if user has been added successfully
   if ($queryc) {
-    echo "visit created!!!";
+
+    for ($num = 0; $num < 20; $num++){
+      $sql = "INSERT INTO tiles (seed,num,type,state,watered,fertilized)
+      VALUES('" . $seed . "', '" . $num . "', 0,0,0,0);";
+      $queryc = $conn->query($sql);
+    }
+
+
+
+
+
+
 
 
   }
