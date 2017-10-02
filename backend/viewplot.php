@@ -4,7 +4,7 @@ $numb = $_POST['n'];
 
 include("growplot.php");
 
-echo $numb . ":". $state;
+echo $state;
 
 
  ?>

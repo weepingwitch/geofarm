@@ -7,7 +7,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0){
 
-echo "this plot has been visited " . $result->num_rows . " times!";
+echo "this plot has been visited " . $result->num_rows . " times!<BR>";
 
 }
 else{
