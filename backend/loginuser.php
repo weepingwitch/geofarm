@@ -29,7 +29,13 @@ if(isset($_COOKIE['geofarmid'])){
       setcookie("geofarmpass",$row['passwordhash'],time() + 3600);
       echo "Logged in from cookie!";
 
-      echo "<script>parent.self.location='../index.php';</script>";
+      if(isset($_COOKIE['geofarmid'])){
+        echo "<script>parent.self.location='../index.php';</script>";
+      }
+      else{
+        die("cookie didn't set :(");
+      }
+
 
     }
 
