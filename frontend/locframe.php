@@ -21,6 +21,7 @@ if(isset($_COOKIE['geofarmid'])){
     else
             {
                 //yay logged in
+                $_SESSION['userame'] = $username;
 
 
             }
