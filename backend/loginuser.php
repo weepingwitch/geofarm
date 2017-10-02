@@ -25,7 +25,10 @@ if(isset($_COOKIE['geofarmid'])){
 
       $_SESSION['new'] = 0;
       $_SESSION['username'] = $username;
+      setcookie("geofarmid",$username,time() + 3600);
+      setcookie("geofarmpass",$row['passwordhash'],time() + 3600);
       echo "Logged in from cookie!";
+
       echo "<script>parent.self.location='../index.php';</script>";
 
     }
