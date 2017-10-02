@@ -13,7 +13,7 @@ echo "<BR><BR><a href='backend/logout.php'>logout</a><Br><BR>";
 
 echo "<BR>";
 
-echo "<table border='1' style='width:100%;height:70%;' id='farmgrid'>";
+echo "<table border='1' style='height:70%;' id='farmgrid'>";
 
 $num = 0;
 for($tr=1;$tr<=5;$tr++){
