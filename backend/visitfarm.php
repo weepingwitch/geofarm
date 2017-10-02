@@ -57,7 +57,7 @@ echo "<div id='seeddiv' style='visibility:hidden;'>" . $seed . "</div>";
 
                   var s = $("#seeddiv").text();
                   var n = $(this).attr('id');
-                  $("#farmgoeshere").Load("backend/tapplot.php",{s:s,n:n});
+                  $("#farmgoeshere").load("backend/tapplot.php",{s:s,n:n});
                   //$("body").load("backend/loginuser.php",{username:uname,password:pword});
               });
 
