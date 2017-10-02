@@ -23,7 +23,7 @@ for($tr=1;$tr<=5;$tr++){
         for($td=1;$td<=4;$td++){
                echo "<td align='center' style='width:25%;'>";
                echo $num;
-               echo;"</td>";
+               echo "</td>";
                $num += 1;
         }
     echo "</tr>";
