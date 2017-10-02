@@ -150,13 +150,13 @@ $(document).ready(function() {
                 $("#div1").html("logging in!");
                 var uname = $("#username").val();
                 var pword = $("#password").val();
-                $("body").load("../backend/loginuser.php",{username:uname,password:pword});
+                $("body").load("backend/loginuser.php",{username:uname,password:pword});
             });
             $("#register").click(function(){
                 $("#div1").html("registering!");
                 var uname = $("#username").val();
                 var pword = $("#password").val();
-                $("body").load("../backend/createuser.php",{username:uname,password:pword});
+                $("body").load("backend/createuser.php",{username:uname,password:pword});
             });
         });
 
