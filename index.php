@@ -36,7 +36,7 @@ if(isset($_COOKIE['geofarmid'])){
   }
 }
 else{
-  include("frontend/loginform.php")
+  include("frontend/loginform.php");
 }
 
 
