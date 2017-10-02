@@ -178,12 +178,7 @@ $(document).ready(function() {
                 $("#div1").html("registering!");
                 var uname = $("#username").val();
                 var pword = $("#password").val();
-                var $form=$(document.createElement('form')).css({display:'none'}).attr("method","POST").attr("action","backend/createuser.php");
-                var $input=$(document.createElement('input')).attr('name','username').val(uname);
-                var $input2=$(document.createElemet('input')).attr('name','password').val(pword);
-                $form.append($input).append($input2);
-                $("body").append($form);
-                $form.submit();
+                post("backend/createuser.php",{username:uname,password:pword});
                 //$("body").load("backend/createuser.php",{username:uname,password:pword});
             });
         });
