@@ -13,7 +13,7 @@ if(isset($_COOKIE['geofarmid'])){
 
     if ($pass != $row['passwordhash'])
             {
-              echo "wrong password :(";
+              die("wrong password :(");
                 $_SESSION['new'] = 0;
               echo "<script>parent.self.location='backend/logout.php';</script>";
             }
