@@ -138,7 +138,7 @@ width:768px;
 </div>
 
 <div id="div1">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
 function post(path, params, method) {
     method = method || "post"; // Set method to post by default if not specified.
