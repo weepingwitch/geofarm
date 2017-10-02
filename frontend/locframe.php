@@ -113,8 +113,10 @@ function updatepage(rlat, rlng)
 body{
   background-color:#2aff00;
 }
-img{
+.tileimg {
   image-rendering:pixelated;
+  width:100%;
+  display:block;
 }
 
 #farmgrid {
