@@ -112,6 +112,7 @@ function updatepage(rlat, rlng)
 <style type="text/css">
 body{
   background-color:#2aff00;
+  background-image:url("art/0x0.png");
 }
 .tileimg {
   image-rendering:pixelated;
