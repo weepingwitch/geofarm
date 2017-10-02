@@ -110,6 +110,13 @@ function updatepage(rlat, rlng)
 
 
 <style type="text/css">
+body{
+  background-color:#2aff00;
+}
+img{
+  image-rendering:pixelated;
+}
+
 #farmgrid {
 width:100%;
 }

@@ -4,7 +4,7 @@ $numb = $_POST['n'];
 
 include("growplot.php");
 echo "<div class='tile' id='" . $numb . "'>";
-echo $state;
+echo "<img src='art/" . $type . "x" . $state . ".png'>";
 echo "</div>"
 
 

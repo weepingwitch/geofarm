@@ -6,7 +6,7 @@ include("dbconnect.php");
 
 
 $username = $_SESSION['username'];
-echo $username;
+echo "hello " . $username;
 echo "<BR>";
 include("checkfirstvisit.php");
 
