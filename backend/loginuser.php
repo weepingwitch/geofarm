@@ -57,8 +57,8 @@ $row = $result->fetch_assoc();
 
 
 
-        setcookie("geofarmid",$username,214748364);
-        setcookie("geofarmpass",$row['passwordhash'],214748364);
+        setcookie("geofarmid",$username,time() + 3600);
+        setcookie("geofarmpass",$row['passwordhash'],time() + 3600);
 
         $_SESSION['username'] = $username;
         echo "logged in";
