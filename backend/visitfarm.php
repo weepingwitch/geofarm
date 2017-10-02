@@ -9,7 +9,6 @@ echo "visiting plot number " . $seed;
 
 echo "<BR><BR><a href='backend/logout.php'>logout</a><Br><BR>";
 
-$_POST['n'] = 0;
 
 
 echo "<BR>";
@@ -22,7 +21,10 @@ for($tr=1;$tr<=5;$tr++){
     echo "<tr style='height:20%;'>";
         for($td=1;$td<=4;$td++){
                echo "<td align='center' style='width:25%;'>";
-               echo $num;
+
+               $_POST['n'] = $num;
+               include("viewplot.php");
+
                echo "</td>";
                $num += 1;
         }
@@ -30,6 +32,6 @@ for($tr=1;$tr<=5;$tr++){
 }
 
 echo "</table>";
-include("viewplot.php");
+
 
 ?>

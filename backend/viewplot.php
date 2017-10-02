@@ -1,6 +1,6 @@
 <?php
 $seed = $_POST['s'];
-$num = $_POST['n'];
+$numb = $_POST['n'];
 
 include("growplot.php");
 
