@@ -1,6 +1,6 @@
 <?php
 
-include "frontend/locframe.html";
+include "frontend/loginform.php";
 
 
 
