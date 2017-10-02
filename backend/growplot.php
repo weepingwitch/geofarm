@@ -27,7 +27,7 @@ $watered = $row['watered'];
 $fertilized = $row['fertilized'];;
 
 // DO WE TRY TO GROW?
-if ($state >= 2 && $state <= 4){
+if ($state >= 1 && $state <= 4){
   $cangrow = true;
   //HERE IS WHERE WE WOULD FETCH THE ORIGTIME FROM THE DATABASE
 
@@ -49,41 +49,49 @@ else{
 
 //try to grow?
 while($cangrow){
-  //FETCH HOW MUCH TIME IT TAKES FROM THE DATABASE BAED ON WATERED STAT
-  $sql = "SELECT * FROM `planttypes` WHERE `id` = '$type'";
-  $result = $conn->query($sql);
+  if ($state == 1){
+    if ($diffh > 2){
+      $state = 0;
+      $needsupdate = true;
+    }
+  }else{
+    //FETCH HOW MUCH TIME IT TAKES FROM THE DATABASE BAED ON WATERED STAT
+    $sql = "SELECT * FROM `planttypes` WHERE `id` = '$type'";
+    $result = $conn->query($sql);
 
-  if ($result->num_rows > 0){
-    $row = $result->fetch_assoc();
-    $growtime = $row['growtime'];
-    $harvesttime = $row['harvesttime'];
+    if ($result->num_rows > 0){
+      $row = $result->fetch_assoc();
+      $growtime = $row['growtime'];
+      $harvesttime = $row['harvesttime'];
 
 
-  } else {
-      echo "0 results";
-  }
-
-
-  if ($watered){
-    $growtime =  $growtime / 2;
-  }
-
-  //if there is time left to grow
-  if ((($state == 2 || $state == 3) && ($diffh > $growtime ) ) || ($diffh > $harvesttime)) {
-
-    //do the growing
-    $state += 1;
-    $watered = false;
-    $diffh -= $growtime;
-    $needsupdate = true;
-    if ($state > 4){
-      $cangrow = false;
+    } else {
+        echo "0 results";
     }
 
+
+    if ($watered){
+      $growtime =  $growtime / 2;
+    }
+
+    //if there is time left to grow
+    if ((($state == 2 || $state == 3) && ($diffh > $growtime ) ) || ($diffh > $harvesttime)) {
+
+      //do the growing
+      $state += 1;
+      $watered = false;
+      $diffh -= $growtime;
+      $needsupdate = true;
+      if ($state > 4){
+        $cangrow = false;
+      }
+
+    }
+    else{
+      $cangrow = false;
+    }
   }
-  else{
-    $cangrow = false;
-  }
+
 }
 
 if ($needsupdate){
