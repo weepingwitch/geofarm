@@ -6,7 +6,7 @@ include("dbconnect.php");
 
 echo "visiting plot number " . $seed;
 
-echo "<BR><BR><a href='logout.php'>logout</a><Br><BR>";
+echo "<BR><BR><a href='backend/logout.php'>logout</a><Br><BR>";
 
 $_POST['n'] = 0;
 
