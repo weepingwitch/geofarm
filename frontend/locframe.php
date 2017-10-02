@@ -119,7 +119,12 @@ body{
   width:100%;
   display:block;
 }
-
+table{
+  border-collapse: collapse;
+border-spacing: 0px;
+-webkit-border-horizontal-spacing: 0px;
+-webkit-border-vertical-spacing: 0px;
+}
 td {
   padding:0px;
 }
