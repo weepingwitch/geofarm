@@ -4,7 +4,7 @@ include("dbconnect.php");
 
 
 $username = $_SESSION['username'];
-echo $username;
+
 $sql = "SELECT * FROM `users` WHERE `username` = '$username'";
 $result = $conn->query($sql);
 
