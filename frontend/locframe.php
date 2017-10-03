@@ -139,7 +139,7 @@ width:100%;
 }
 @media only screen and (min-width: 769px) {
 #farmgrid {
-width:700px;
+width:30%;
     margin-left: auto;
     margin-right:auto;
 
