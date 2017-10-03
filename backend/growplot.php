@@ -58,7 +58,7 @@ while($cangrow){
   }
   else{
     //FETCH HOW MUCH TIME IT TAKES FROM THE DATABASE BAED ON WATERED STAT
-    
+
     $sql = "SELECT * FROM `planttypes` WHERE `id` = '$type'";
     $result = $conn->query($sql);
 
@@ -78,7 +78,7 @@ while($cangrow){
     }
 
     //if there is time left to grow
-    if ((($state == 2 || $state == 3) && ($diffh > $growtime ) ) || ($diffh > $harvesttime)) {
+    if ((($state == 2 || $state == 3) && ($diffh >= $growtime ) ) || ($diffh >= $harvesttime)) {
 
       //do the growing
       $state += 1;
