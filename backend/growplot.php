@@ -58,7 +58,7 @@ while($cangrow){
   }
   else{
     //FETCH HOW MUCH TIME IT TAKES FROM THE DATABASE BAED ON WATERED STAT
-    echo "lookin for "
+    
     $sql = "SELECT * FROM `planttypes` WHERE `id` = '$type'";
     $result = $conn->query($sql);
 
