@@ -37,16 +37,27 @@ else{
 
 // handle planting seeds;
 
+$state = 2;
+$needsupdate = true;
+
+
   }
 
   if ($state == 4){
 
 //do the harvest here!!!!
+$state = 1;
+$needsupdate = true;
 
 
   }
 
+  if ($state == 5){
+    //clear dead
+    $state = 0;
+    $needsupdate = true;
 
+  }
 
 
 }
