@@ -25,20 +25,22 @@ $state = $row['state'];
 // FETCH WHETHER IT WAS WATERED FROM THE DATABASE
 $watered = $row['watered'];
 $fertilized = $row['fertilized'];;
+$origtime = new DateTime();
+$origtime->setTimestamp($row['lasttouched']);
+$now = new DateTime();
+//echo "time: "  . $now->getTimestamp();
+//calculate number of hours since last updated
+$diff =  $origtime->diff($now);
+$diffh = $diff->h;
+$diffh = $diffh + ($diff->days*24);
+
 
 // DO WE TRY TO GROW?
 if ($state >= 1 && $state <= 4){
   $cangrow = true;
   //HERE IS WHERE WE WOULD FETCH THE ORIGTIME FROM THE DATABASE
 
-  $origtime = new DateTime();
-  $origtime->setTimestamp($row['lasttouched']);
-  $now = new DateTime();
-  //echo "time: "  . $now->getTimestamp();
-  //calculate number of hours since last updated
-  $diff =  $origtime->diff($now);
-  $diffh = $diff->h;
-  $diffh = $diffh + ($diff->days*24);
+
 
 
 }
